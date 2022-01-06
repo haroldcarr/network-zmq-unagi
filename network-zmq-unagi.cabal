@@ -1,0 +1,94 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           network-zmq-unagi
+version:        0.0.1.0
+synopsis:       put/take messages to/from zeromq via unagi channels
+description:    See README at <https://github.com/haroldcarr/network-zmq-unagi
+category:       network
+homepage:       https://github.com/haroldcarr/network-zmq-unagi#readme
+bug-reports:    https://github.com/haroldcarr/network-zmq-unagi/issues
+author:         Harold Carr
+maintainer:     Harold Carr
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/haroldcarr/network-zmq-unagi
+
+library
+  exposed-modules:
+      Network.ConnectionCache
+      Network.ZMQ.Init
+      Network.ZMQ.NoBlockChan
+      Network.ZMQ.Types
+      Network.ZMQ.ZMQMessageServer
+  other-modules:
+      Paths_network_zmq_unagi
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fhide-source-paths
+  build-depends:
+      async
+    , base >=4.11 && <5
+    , cereal
+    , cereal-text
+    , containers
+    , fast-logger
+    , mtl
+    , protolude
+    , text
+    , unagi-chan
+    , zeromq4-haskell
+  default-language: Haskell2010
+
+executable main
+  main-is: ZMQExample.hs
+  other-modules:
+      
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fhide-source-paths -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      async
+    , base >=4.11 && <5
+    , cereal
+    , cereal-text
+    , containers
+    , fast-logger
+    , mtl
+    , network-zmq-unagi
+    , protolude
+    , text
+    , unagi-chan
+    , zeromq4-haskell
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fhide-source-paths -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      async
+    , base >=4.11 && <5
+    , cereal
+    , cereal-text
+    , containers
+    , fast-logger
+    , hedgehog
+    , mtl
+    , network-zmq-unagi
+    , protolude
+    , text
+    , unagi-chan
+    , zeromq4-haskell
+  default-language: Haskell2010

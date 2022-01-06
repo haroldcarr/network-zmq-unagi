@@ -1,9 +1,17 @@
+*.lock
+*~
+*.*~
+
+# nix
+result
+result-*
+
+# haskell
 dist
-dist-*
+dist-newstyle
 cabal-dev
 *.o
 *.hi
-*.hie
 *.chi
 *.chs.h
 *.dyn_o
@@ -18,6 +26,7 @@ cabal.sandbox.config
 *.eventlog
 .stack-work/
 cabal.project.local
-cabal.project.local~
 .HTF/
 .ghc.environment.*
+
+README.html
