@@ -1,6 +1,6 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.34.4.
+-- This file has been generated from package.yaml by hpack version 0.34.6.
 --
 -- see: https://github.com/sol/hpack
 
@@ -29,6 +29,8 @@ library
       Network.ZMQ.Types
       Network.ZMQ.ZMQMessageServer
   other-modules:
+      Paths_network_zmq_unagi
+  autogen-modules:
       Paths_network_zmq_unagi
   hs-source-dirs:
       src

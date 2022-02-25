@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:network-zmq-unagi"
+
+    - path: "app/ZMQExample.hs"
+      component: "network-zmq-unagi:exe:main"
+
+    - path: "test"
+      component: "network-zmq-unagi:test:test"
